@@ -1,0 +1,153 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: ease;
+}
+
+.header{
+  width: 100%;
+  background-color: #009688;
+  color: #fff;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header h1{
+  padding: 20px 50px;
+}
+.header .right{
+  padding: 0 50px;
+}
+
+.inputHeader{
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+}
+.header .right button{
+  background-color: rgb(255, 255, 255);
+  transition: .2s;
+  cursor: pointer;
+}
+.header .right button:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.conteneur{
+  max-width: 700px;
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.conteneur .boite{
+  width: 300px;
+  margin-right: 30px;
+  text-align: center;
+  opacity: 0.5;
+  transition: 0.3s;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+.conteneur .boite:hover{
+  opacity: 1;
+}
+.boite .headerBoite{
+  background-color: #111;
+  color: #fff;
+  font-size: 1.8em;
+  padding: 60px 0;
+}
+
+.boite .contentBoite p{
+  border-bottom: 1px solid rgb(233, 223, 223);
+  padding: 20px 0;
+}
+
+.boite .footerBoite{
+  background-color: #f1f1f1;
+  padding: 30px 0;
+}
+
+.boite .footerBoite button{
+  border: none;
+  outline: none;
+  background-color: #fff;
+  padding: 15px 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.boite .footerBoite button:hover{
+  background-color: #111;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  color: #fff;
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+footer p{
+  padding: 20px;
+}
+
+/* login logout */
+.loginLogout{
+  width: 150px;
+  position: absolute;
+  right: 0px;  
+  bottom: 80px;
+  display: none;
+}
+.loginLogout button{
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(214, 150, 31)!important;
+  cursor: pointer;
+  color: #fff;
+  font-size: 18px;
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,0.12), 0 17px 50px 0 rgba(0,0,0,0.10);
+  transition: .5s;
+}
+/* end login logout */
+
+@media screen and (max-width: 740px) {
+  .header h1{
+    padding: 10px;
+    font-size: 1.6em;
+  }
+  .header .right{
+    padding: 10px;
+  }
+
+  .header{
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .conteneur{
+    display: block;
+  }
+  .conteneur .boite{
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  footer{
+    position: relative;
+  }
+  footer p{
+    padding: 30px;
+  }
+}

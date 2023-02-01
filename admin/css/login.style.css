@@ -1,0 +1,204 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: ease;
+}
+
+.header{
+  width: 100%;
+  background-color: #009688;
+  color: #fff;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header h1{
+  padding: 20px 50px;
+}
+.header .right{
+  padding: 0 50px;
+}
+
+.inputHeader{
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+}
+.header .right button{
+  background-color: rgb(255, 255, 255);
+  transition: .2s;
+  cursor: pointer;
+}
+.header .right button:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+footer p{
+  padding: 20px;
+}
+
+/*message*/
+  #snackbar {
+    visibility: hidden;
+    position: fixed;
+    width: 250px; 
+    margin-left: -125px; 
+    background-color: #333; 
+    color: #fff; 
+    text-align: center; 
+    border-radius: 2px; 
+    padding: 16px; 
+    z-index: 1; 
+    bottom: 100px;
+    left: 50%;
+  }
+  
+  #snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 100px; opacity: 1;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 100px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  /*end message*/
+
+/*login*/
+.loginFenetre{ 
+  z-index: 1;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  /* display: none; */
+  top: 0;
+  opacity: 0.8;
+  animation: avyambony .5s;
+}
+
+@keyframes avyambony {
+  from { top: -1000px;}
+  to { top: 0px;}
+}
+
+.loginContent{ 
+  background-color: rgb(255, 255, 255);
+  width: 300px;
+  margin: auto;
+  padding: 40px 20px;
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.loginContent .headLogin{ 
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(230, 220, 220);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.loginContent .error-txt{
+  background-color: rgb(241, 59, 59);
+  padding: 8px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #fff;
+  border-radius: 3px;
+  font-weight: 900;
+
+  /* display: none; */
+}
+
+.loginContent .footLogin{
+  text-align: right;
+  color: #c1c1c1;
+}
+
+.loginContent .headLogin .fermer{ 
+  padding: 8px 10px;
+  color: #fff;
+  outline: none;
+  background-color: rgb(226, 156, 26);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.loginContent form{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.loginContent input{ 
+  padding: 8px 10px;
+  outline: none;
+  border: 1px solid rgb(230, 220, 220);
+  margin-bottom: 20px;
+  border-radius: 6px;
+}  
+
+.loginContent .btnlogin{ 
+  background-color: #0cc5b3;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 8px 10px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  transition: .3s;
+}
+.loginContent .btnlogin:hover{ 
+  background-color: #009688;
+}
+
+/*end login*/
+
+
+
+
+@media screen and (max-width: 740px) {
+  .header h1{
+    padding: 10px;
+    font-size: 1.6em;
+  }
+  .header .right{
+    padding: 10px;
+  }
+
+  .header{
+    align-items: center;
+    justify-content: center;
+  }
+  
+  footer p{
+    padding: 30px;
+  }
+  .loginContent{ 
+    margin-top: 150px;
+  }
+}
