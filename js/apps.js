@@ -15,3 +15,29 @@ function showMessage() {
     x.className = "show";
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 }
+
+$('.success').click(function(){
+    console.log('logout application');
+    document.location="php/logout.php";
+});
+
+$('.confirm').click(function(){
+    console.log('confirm delete');
+});
+
+$('.cancel').click(function(){
+    $('.modalLogout').hide(100);
+    $('.modalConfirmation').hide(100);
+});
+
+$('.closeLogin').click(function(){
+    $('.modalLogout').hide(100);
+});
+
+$('#logoutModal').click(function() {
+    $('.modalLogout').show(200);
+});
+
+$('#supprimer').click(function() {
+    $('.modalConfirmation').show(200);
+});

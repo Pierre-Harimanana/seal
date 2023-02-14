@@ -39,20 +39,25 @@
 }
 
 .conteneur{
-  max-width: 700px;
+  max-width: 1000px;
   margin: auto;
-  margin-top: 10px;
+  margin-top: 30px;
   display: flex;
   flex-wrap: wrap;
 }
 
 .conteneur .boite{
   width: 300px;
-  margin-right: 30px;
+  margin-right: 20px;
   text-align: center;
   opacity: 0.5;
   transition: 0.3s;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* espacement mivoaka */
+.marg{
+  margin: -20px 0;
 }
 
 .conteneur .boite:hover{
@@ -62,12 +67,12 @@
   background-color: #111;
   color: #fff;
   font-size: 1.8em;
-  padding: 60px 0;
+  padding: 50px 0;
 }
-
+  
 .boite .contentBoite p{
   border-bottom: 1px solid rgb(233, 223, 223);
-  padding: 20px 0;
+  padding: 15px 0;
 }
 
 .boite .footerBoite{
@@ -99,28 +104,6 @@ footer{
 footer p{
   padding: 20px;
 }
-
-/* login logout */
-.loginLogout{
-  width: 150px;
-  position: absolute;
-  right: 0px;  
-  bottom: 80px;
-  display: none;
-}
-.loginLogout button{
-  padding: 10px 20px;
-  outline: none;
-  border: none;
-  border-radius: 20px;
-  background-color: rgb(214, 150, 31)!important;
-  cursor: pointer;
-  color: #fff;
-  font-size: 18px;
-  box-shadow: 0 6px 8px 0 rgba(0,0,0,0.12), 0 17px 50px 0 rgba(0,0,0,0.10);
-  transition: .5s;
-}
-/* end login logout */
 
 @media screen and (max-width: 740px) {
   .header h1{

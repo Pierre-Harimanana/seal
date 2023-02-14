@@ -8,7 +8,7 @@ form.onsubmit=function(e){
 
 boutonAdd.onclick=function() {
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", "php/insert.php", true);
+    xhr.open("POST", "php/expert.php", true);
     xhr.onload=function() {
         if (xhr.readyState==XMLHttpRequest.DONE) {
             if (xhr.status==200) {

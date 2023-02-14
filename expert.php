@@ -1,8 +1,10 @@
 <?php include "include/test_login.php";?>
+<?php include "include/modal.php";?>
 
 <html>
     <head>
         <link rel="stylesheet" href="css/expert.style.css">
+        <link rel="stylesheet" href="css/modal.style.css">
         <title> E- research</title>
         <meta charset="utf-8">
         <script src="js/jquery.js"></script>
@@ -16,7 +18,7 @@
 
             <div class="right">
                 <input id="search" class="inputHeader" type="text" placeholder="you can search here">
-                <button class="inputHeader">Logout</button>
+                <button class="inputHeader"  id="logoutModal">Logout</button>
             </div>
         </div>
 
@@ -121,7 +123,6 @@
 <script src="js/chargement.js"></script>
 <script src="js/modification.js"></script>
 <script src="js/apps.js"></script>
-
 
 <script>
     const table= document.querySelector('.tableau');
