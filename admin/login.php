@@ -1,55 +1,101 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- bootstrap -->
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+        <!-- style -->
         <link rel="stylesheet" href="css/login.style.css">
         <title> E- research</title>
         <meta charset="utf-8">
         <script src="js/jquery.js"></script>
     </head>
     <body>
-
-        <div class="header">
-            <h1>La Ligne Scandinave</h1>
-
-            <div class="right">
-                <input class="inputHeader" type="text" placeholder="you can search here">
-                <button class="inputHeader">Logout</button>
-            </div>
+            
+        <div class="jumbotron text-center bg-2">
+            <h1>La ligne Scandinave</h1>
+            <p>This page is reserved for administrator only, there you can manage the list of user, and set on and set off some account.</p>
         </div>
 
-
-        <div class="loginFenetre">
-            <div class="loginContent">
-                <div class="headLogin">
-                    <h3>Login admin</h3>
-                    <button class="fermer">Close</button>
+    <div class="container background-red">
+        <h2 class="text-center">Login administrator</h2>
+        <form class="form-horizontal">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-10">
+                    <div class="alert alert-danger error-txt">
+                        <strong>Warning!</strong>
+                        <span class="error-message"></span>
+                    </div>
                 </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">Username *</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="username" placeholder="Enter email">
+                </div>
+            </div>
 
-                <div class="error-txt">coucou</div>
-
-                <form action="">
-                    Username
-                    <input type="text" placeholder="votre nom">        
-                    Password
-                    <input type="password" placeholder="votre mot de passe" autocomplete="off">        
-                    <button class="btnlogin">Login</button>
-                </form>
-
-                <div class="footLogin">
-                    not yet signed? signup
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Password *</label>
+            <div class="col-sm-10">          
+                <input type="password" class="form-control" name="motdepass" placeholder="Enter password">
+            </div>
+        </div>
+        
+        <div class="form-group">        
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label><input type="checkbox"> Remember me</label>
                 </div>
             </div>
         </div>
+        
+        <div class="form-group">        
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default btnlogin">Submit</button>
+            </div>
+        </div>
+    </form>
+    </div>
 
-
-        <footer>
-            <p>Copyright 2023</p>
+        <footer class="text-center">
+            <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+                <span class="glyphicon glyphicon-chevron-up"></span>
+            </a><br><br>
+            <p>Copyright &copy; 2023</p>
         </footer>
-
     </body>
 </html>
 
-<!-- success message -->
-<div id="snackbar"></div>
-<!-- fin success message -->
-<script src="../js/apps.js"></script>
+    <script>
+let boutonLogin= document.querySelector('.btnlogin');
+let form= document.querySelector('form');
+
+form.onsubmit=function(e){
+    e.preventDefault();
+}
+
+boutonLogin.onclick=function() {
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "php/login.php", true);
+    xhr.onload=function() {
+        if (xhr.readyState==XMLHttpRequest.DONE) {
+            if (xhr.status==200) {
+                let data = xhr.responseText;
+                if (data=='succes') {
+                    console.log(data);
+                    document.location="index.php";
+                }else {
+                    console.log(data);
+                    $('.error-txt').slideDown(300);
+                    $('.error-message').text(data);
+                }
+            }
+        }
+    }
+    let formdata = new FormData(form);
+    xhr.send(formdata);
+}
+</script>

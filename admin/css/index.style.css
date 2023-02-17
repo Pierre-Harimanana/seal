@@ -70,3 +70,15 @@ footer p{
 .margin-top{
   margin-top: 50px;
 }
+
+.deleteBouton{
+  cursor: pointer;
+}
+
+.right-bottom{
+  border: 1px solid rgb(214, 202, 202);
+  padding: 10px;
+  position: absolute;
+  right: 20px;
+  bottom: 90px;
+}

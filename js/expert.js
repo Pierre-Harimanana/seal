@@ -1,5 +1,5 @@
 let boutonAdd= document.querySelector('#ajouterExpert');
-let form= document.querySelector('.bodyModal form');
+let form= document.querySelector('.modal-content form');
 let erreurText= document.querySelector('.error-txt');
 
 form.onsubmit=function(e){
@@ -14,13 +14,12 @@ boutonAdd.onclick=function() {
             if (xhr.status==200) {
                 let data = xhr.responseText;
                 if(data !== 'succes'){
-                    $('.error-txt').slideDown(300);
+                    $('.messageBox').slideDown(200);
                     $('.error-txt').text(data);
                 }else{
                     $('#snackbar').text('ajout nouvel expert réussi');
                     showMessage();
-
-                    $('.modal').hide();
+                    $('.modal').modal('hide');
                 }
             }
         }

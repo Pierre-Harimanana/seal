@@ -1,16 +1,14 @@
 <?php
+    session_start();
     if (!isset($_SESSION['admin'])) {
-        //header('Location: login.php');
+        header('Location: login.php');
     }
-    include 'include/connection.php';
-    $sql = $bdd->query('select * from utilisateur');
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="css/index.style.css">
-
         <!-- bootstrap -->
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
@@ -26,7 +24,7 @@
 
             <div class="right">
                 <input class="inputHeader" type="text" placeholder="you can search here">
-                <button class="inputHeader" id="logout">Logout</button>
+                <button data-toggle="tooltip" data-placement="bottom" title="set on <?=$_SESSION['admin']?>!" class="inputHeader" id="logout">Logout</button>
             </div>
         </div>
 
@@ -38,40 +36,28 @@
                         <th>#</th>
                         <th>Usename</th>
                         <th>Status</th>
+                        <th>Signed_at</th>
                         <th>action</th>
+                        <th>Delete</th>
                     </tr>
                     </thead>
 
-                    <tbody>
-                    <?php
-                        while($data=$sql->fetch()){
-                    ?>
-                    <tr data-id=<?=$data['id'];?>>
-                        <td><?=$data['id'];?></td>
-                        <td><?=$data['username'];?></td>
-                        <td><?=$data['validate'];?></td>
-                        <td>
-                            <?php
-                                if($data['validate'] == 'valide'){
-                            ?>
-                                <button type="button" data-toggle="tooltip" title="set off <?=$data['username']?>!" id="desactiver" class="btn btn-danger btn-xs">deactivate</button>
-                            <?php
-                                }else{
-                            ?>
-                                <button type="button" data-toggle="tooltip" title="set on <?=$data['username']?>!"  id="activer" class="btn btn-success btn-xs">activate</button>
-                            <?php
-                                }
-                            ?>
-                        </td>
-                    </tr>
-                    <?php
-                        }
-                    ?>
-
+                    <tbody class="myTable">
                     </tbody>
+
                 </table>
             </div>
         </div>
+    
+        <div class="right-bottom">
+        </div>
+
+        <script>
+            setInterval('loadData()', 300);
+            function loadData() {
+                $('.right-bottom').load('php/counter.php');
+            }
+        </script>
 
         <footer>
             <p>Copyright 2023</p>
@@ -83,21 +69,95 @@
 </html>
 
 <script>
-    $('#desactiver').click(function(){
-        console.log("desactivation");
+    const table= document.querySelector('.myTable');
+    var x=setInterval(() => {
+        var xhr= new XMLHttpRequest();
+
+        xhr.open('GET', 'php/chargementUtilisateur.php', true);
+
+        xhr.onload=function() {
+            if (xhr.readyState==XMLHttpRequest.DONE) {
+                if (xhr.status==200) {
+                    let data = xhr.response;
+                    table.innerHTML=data;
+                }   
+            }
+        }
+        xhr.send();
+    }, 500);
+</script>
+
+
+<script>
+    $(document).on('click', 'a[data-role="desactiver"]', function() {
+        var id= $(this).data('id');
+        $('.message-txt').text('Are you sure to deactivate this account??');
+        $('.modal').modal('show');
+
+        $('#confirm').click(function() {
+            $.ajax({
+            url : 'php/setupAccount.php',
+            method: 'POST',
+            data : { id: id , newState: 'invalide'},
+            success: function(response){
+                        $('#myModal').modal('hide');
+                        console.log("desactiver");                          
+                    }
+            });
+        });
     });
 
-    $('#activer').click(function(){
-        console.log("activation");
+    $(document).on('click', 'a[data-role="activer"]', function() {
+        var id= $(this).data('id');
+        $('.message-txt').text('Are you sure to activate this account??');
+        $('.modal').modal('show');
+
+        $('#confirm').click(function() {
+            $.ajax({
+            url : 'php/setupAccount.php',
+            method: 'POST',
+            data : { id: id , newState: 'valide'},
+            success: function(response){
+                        $('#myModal').modal('hide');
+                        console.log("activer");                          
+                    }
+            });
+        });
     });
+
+    $(document).on('click', 'a[data-role="delete"]', function() {
+        var id= $(this).data('id');
+        $('.message-txt').text('Are you sure to delete account??');
+        $('.modal').modal('show');
+
+        $('#confirm').click(function() {
+            $.ajax({
+            url : 'php/supprimer.php',
+            method: 'POST',
+            data : { id: id},
+            success: function(response){
+                        $('#myModal').modal('hide');
+                        console.log("delete success");                          
+                    }
+            });
+        });
+    });
+
+    $('#logout').click(function() {
+        console.log('logout');
+        $('.message-txt').text('do you want to quit application??');
+        $('.modal').modal('show');
+        $('#confirm').click(function() {
+            document.location='php/logout.php';
+        });
+    });
+
 
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip();
     });
 
 </script>
-
-<button type="button" data-toggle="modal" data-target="#myModal">Modal</button>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog">
@@ -106,14 +166,20 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
+                <h4 class="modal-title">Confirmation</h4>
             </div>
             <div class="modal-body">
-                <p>Are you sure to activate this account??</p>
+                <p class="message-txt">Are you sure to activate this account??</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-warning">Yes</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-danger" id="confirm">
+                    <span class="glyphicon glyphicon-leaf"></span>
+                    Yes
+                </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <span class="glyphicon glyphicon-eject"></span>
+                    No
+                </button>
             </div>
         </div>
     </div>

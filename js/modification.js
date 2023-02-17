@@ -4,7 +4,7 @@ $(document).ready(function() {
         var client = $('#' + id).children('td[data-target="nom_client"]').text();
         var expert = $('#' + id).children('td[data-target="expert"]').text();
       
-        $('.modalModif').show();
+        $('#myModal2').modal('show');
         $('#clientModif').val(client);
         $('#expertModif').val(expert);
 
@@ -18,10 +18,10 @@ $(document).ready(function() {
                 data: {client: nouveauClient, expert: nouveauExpert, id: id},
                 success: function(response) {
                     if (response!='succes') {
-                        $('.error-txt').slideDown(300);
+                        $('.messageBox').slideDown(300);
                         $('.error-txt').text(response);
                     } else {
-                        $('.modalModif').hide(300); 
+                        $('#myModal2').modal('hide'); 
                         showMessage();
                         $('#snackbar').text('Modification réussie!');
                     }
@@ -29,17 +29,4 @@ $(document).ready(function() {
             });
         });
     });
-
-    $('.headerModal span').click(function() {
-        $('.modalModif').hide(300);
-    });
-
-    $('.btnAjout').click(function() {
-        $('.modal').show();
-    });
-
-    $('.closeBtn').click(function() {
-        $('.modal').hide(300);
-    });
-
 });

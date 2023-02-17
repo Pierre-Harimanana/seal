@@ -8,6 +8,8 @@
     <head>
         <link rel="stylesheet" href="css/index.style.css">
         <link rel="stylesheet" href="css/modal.style.css">
+        <!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> -->
         <meta charset="utf-8">
         <script src="js/jquery.js"></script>
     </head>

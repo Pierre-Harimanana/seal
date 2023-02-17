@@ -32,7 +32,12 @@
 .closeLogin{
   font-size: 2em;
   cursor: pointer;
-  color: #bba2a2;
+  color: #c0a4a4;
+  transition: .2s;
+}
+
+.closeLogin:hover{
+  color: #5e5959;
 }
 
 .modal-text{

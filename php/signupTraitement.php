@@ -4,7 +4,7 @@ include_once 'connection.php';
 $username= htmlspecialchars($_POST['username']);
 $password= htmlspecialchars($_POST['motdepass']);
 $password2= htmlspecialchars($_POST['confirmPass']);
-$date= date('Y-m-d');
+$date= date('Y-m-d h-i-s');
 
 $validation='invalide';
 
