@@ -1,22 +1,24 @@
 <?php 
     include_once "include/test_login.php";
-    include_once "include/modal.php";
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="css/index.style.css">
-        <link rel="stylesheet" href="css/modal.style.css">
-        <!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="css/apps.style.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <meta charset="utf-8">
         <script src="js/jquery.js"></script>
     </head>
     <body>
 
         <div class="header">
-            <h1>La Ligne Scandinave</h1>
+            <h1>
+                <a href="index.php">
+                    La Ligne Scandinave
+                </a> 
+            </h1>
 
             <div class="right">
                 <input class="inputHeader" type="text" placeholder="you can search here">
@@ -73,8 +75,12 @@
             <p>Copyright 2023</p>
         </footer>
 
+        <?php
+            include 'include/modal.php';
+        ?>
 
     </body>
 </html>
 
 <script src="js/apps.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>

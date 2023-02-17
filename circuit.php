@@ -1,10 +1,12 @@
 <?php include "include/test_login.php";?>
-<?php include "include/modal.php";?>
 
 <html>
     <head>
-        <link rel="stylesheet" href="css/circuit.style.css">
-        <link rel="stylesheet" href="css/modal.style.css">
+        <link rel="stylesheet" href="css/apps.style.css">
+        <link rel="shortcut icon" href="images/Contact-icon.png" type="image/x-icon">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
         <title> E- research</title>
         <meta charset="utf-8">
         <script src="js/jquery.js"></script>
@@ -12,9 +14,11 @@
     <body>
 
         <div class="header">
-            <a href="index.php">
-                <h1>La Ligne Scandinave > Circuit</h1>
-            </a> 
+                <h1>
+                    <a href="index.php">
+                        La Ligne Scandinave > Circuit
+                    </a> 
+                </h1>
 
             <div class="right">
                 <input id="search" class="inputHeader" type="text" placeholder="you can search here">
@@ -22,91 +26,153 @@
             </div>
         </div>
 
-        <div class="content" style="overflow-x:auto;">
-            <table>
-                <thead>
-                    <tr class="headingTable">
-                        <th>Client</th>
-                        <th>circuit</th>
-                        <th>Modifier</th>
-                    </tr>
-                </thead>
+        <div class="container margBottom">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Client</th>
+                            <th>circuit</th>
+                            <th>modifier</th>
+                        </tr>
+                    </thead>
+                    <tbody class="contentTable">
 
-                <tbody class="tableau">
-                    
-                </tbody>
-
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
+
     
-        <div class="ajoutercircuit">
-            <button class="btnAjout">Ajouter</button>
+        <div class="ajouterCircuit">
+            <button data-toggle="modal" data-target="#myModal" class="btn btn-success btn-lg" >
+                <span class="glyphicon glyphicon-plus"></span>
+                Ajouter
+            </button>
         </div>
 
-    <!-- ajout circuit -->
-        <div class="modal">
-            <div class="contentModal">
-                
-                <div class="headerModal">
-                    <h3>Ajouter nouvel circuit</h3>
-                    <span class="closeBtn">&times;</span>
-                </div>
-                
-                <div class="bodyModal">
-                    <div class="error-txt"></div>
-
-                <form action="#" autocomplete="off">
-                    <div class="input">
-                        Client
-                        <input type="text" name="client" placeholder="enter customer name">
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="text-center">Ajouter nouvelle circuit</h4>
                     </div>
-
-                    <div class="input">
-                        circuit
-                        <input type="text" name="circuit" placeholder="enter circuit name">
-                    </div>
-
-                    </div>
-            
-                    <div class="footerModal">
-                        <button type="submit" id="ajouterCircuit">Add circuit</button>
-                    </div>
+                    
+                    <form action="#">            
+                        <div class="modal-body">
+                            <div class="alert alert-danger messageBox">
+                                <strong>Danger!</strong> 
+                                <span class="error-txt">
+                                    Indicates a dangerous or potentially negative action.
+                                </span>
+                            </div>
+                                <div class="form-group">
+                                    <label for="client">Customer:</label>
+                                    <input type="text" name="client" class="form-control" placeholder="enter customer name">
+                                </div>  
+                                <div class="form-group">
+                                    <label for="txt2">Circuit:</label>
+                                    <input type="text" name="circuit" class="form-control" placeholder="enter maersk">
+                                </div>  
+                        </div>
                             
-                </form>
-            </div>
-        </div>
-    <!-- fin ajout circuit -->
+                        <div class="modal-footer">
+                                <button type="submit" class="btn btn-success" id="ajouterCircuit">Add expert</button>
+                        </div>
+                    </form>
 
-    <!-- modal modification -->
-        <div class="modalModif">
-            <div class="contentModal">
-                
-                <div class="headerModal">
-                    <h3>Modifier un circuit</h3>
-                    <span class="closeBtn">&times;</span>
                 </div>
-                
-                <div class="bodyModal">
-                    <div class="error-txt"></div>
-
-                    <div class="input">
-                        Client *
-                        <input type="text" id="clientModif" name="clientModif" placeholder="enter customer name" autocomplete="off">
-                    </div>
-
-                    <div class="input">
-                        Circuit *
-                        <input type="text" id="circuitModif" name="circuitModif" placeholder="enter circuit name" autocomplete="off">
-                    </div>
-
-                    </div>
-            
-                    <div class="footerModal">
-                        <button type="submit" id="modifiercircuit">save circuit</button>
-                    </div>
             </div>
         </div>
-    <!-- fin modal modification -->
+        <!-- End Modal -->
+
+        <!-- Modal modification -->
+        <div id="myModal2" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    
+                        <div class="modal-body">
+                            <div class="alert alert-danger messageBox">
+                                <strong>Danger!</strong> 
+                                <span class="error-txt">
+                                    Indicates a dangerous or potentially negative action.
+                                </span>
+                            </div>
+                                <div class="form-group">
+                                    <label for="pwd">Client :</label>
+                                    <input type="text" id="clientModif" class="form-control">
+                                </div>  
+                                <div class="form-group">
+                                    <label for="pwd">Maersk :</label>
+                                    <input type="text" id="circuitModif" class="form-control">
+                                </div>  
+                        </div>
+                            
+                        <div class="modal-footer">
+                            <!-- <button type="submit" class="btn btn-success" id="saveCaution">Save</button> -->
+                            <button type="submit" class="btn btn-default" id="saveCircuit">test</button>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- End Modal modification -->
+
+        <!-- Modal confirmation -->
+        <div class="modal fade" id="myModal3" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Confirmation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="message-txt">Are you sure to activate this account??</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" id="confirm">
+                            <span class="glyphicon glyphicon-ok-sign"></span>
+                            Yes
+                        </button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            No
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fin Modal confirmation -->
+
+        <?php
+            include 'include/modal.php';
+        ?>
+
+        <script>
+            $(document).on('click', 'a[data-role="supprimerCaution"]', function() {
+                var id= $(this).data('id');
+                $('.message-txt').text('Are you sure to delete row??');
+                $('#myModal3').modal('show');
+                $('#confirm').click(function() {
+                    $.ajax({
+                    url : 'php/supprimer.php',
+                    method: 'POST',
+                    data : { delete: id , nomtable: 'circuit'},
+                    success: function(response){
+                                $('#myModal3').modal('hide');
+                                console.log("delete success");                          
+                            }
+                    });
+                });
+            });
+        </script>
 
         <!-- success message -->
         <div id="snackbar"></div>
@@ -119,24 +185,31 @@
     </body>
 </html>
 
-<script src="js/circuit.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
 <script src="js/chargementCircuit.js"></script>
-<script src="js/modificationCircuit.js"></script>
 <script src="js/apps.js"></script>
+<script src="js/circuit.js"></script>
+<script src="js/modifCircuit.js"></script>
 
 <script>
-    const table= document.querySelector('.tableau');
+    const table= document.querySelector('.contentTable');
     searchBar= document.querySelector('#search');
 
     searchBar.onkeyup=function() {
         let search= searchBar.value;
+
+        if (search!=="") {
+            searchBar.classList.add('active');
+        }else{
+            searchBar.classList.remove('active');
+        }
+
         var xhr= new XMLHttpRequest();
         xhr.open('POST', 'php/searchcircuit.php', true);
         xhr.onload=function() {
             if (xhr.readyState==XMLHttpRequest.DONE) {
                 if (xhr.status==200) {
                     let data = xhr.response;
-                    // console.log(data);
                     table.innerHTML=data;
                 }   
             }

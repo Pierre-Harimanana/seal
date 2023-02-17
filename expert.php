@@ -1,8 +1,8 @@
-<?php include "include/test_login.php";?>
+<?php include_once "include/test_login.php";?>
 
 <html>
     <head>
-        <link rel="stylesheet" href="css/expert.style.css">
+        <link rel="stylesheet" href="css/apps.style.css">
         <link rel="shortcut icon" href="images/Contact-icon.png" type="image/x-icon">
         <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
@@ -79,7 +79,10 @@
                         </div>
                             
                         <div class="modal-footer">
-                                <button type="submit" class="btn btn-success" id="ajouterExpert">Add expert</button>
+                                <button type="submit" class="btn btn-success" id="ajouterExpert">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                    Add
+                                </button>
                         </div>
                     </form>
 
@@ -106,18 +109,21 @@
                                 </span>
                             </div>
                                 <div class="form-group">
-                                    <label for="pwd">Password:</label>
+                                    <label for="pwd">Customer:</label>
                                     <input type="text" id="clientModif" name="clientModif" class="form-control">
                                 </div>  
                                 <div class="form-group">
-                                    <label for="pwd">Password:</label>
+                                    <label for="pwd">Expert:</label>
                                     <input type="text" id="expertModif" name="expertModif" class="form-control">
                                 </div>  
 
                         </div>
                             
                         <div class="modal-footer">
-                                <button type="submit" class="btn btn-success" id="modifierExpert">Save expert</button>
+                                <button type="submit" class="btn btn-success" id="modifierExpert">
+                                <span class="glyphicon glyphicon-save"></span>
+                                    Save
+                                </button>
                         </div>
                     </form>
 
@@ -125,7 +131,6 @@
             </div>
         </div>
         <!-- End Modal modification -->
-
 
         <!-- Modal confirmation -->
         <div class="modal fade" id="myModal3" role="dialog">
@@ -141,11 +146,11 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" id="confirm">
-                            <span class="glyphicon glyphicon-leaf"></span>
+                            <span class="glyphicon glyphicon-ok-sign"></span>
                             Yes
                         </button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">
-                            <span class="glyphicon glyphicon-eject"></span>
+                            <span class="glyphicon glyphicon-remove-circle"></span>
                             No
                         </button>
                     </div>
@@ -153,31 +158,35 @@
             </div>
         </div>
         <!-- Fin Modal confirmation -->
+       
+        <?php
+            include 'include/modal.php';
+        ?>
 
-
-<script>
-    $(document).on('click', 'a[data-role="supprimerExpert"]', function() {
-        var id= $(this).data('id');
-        $('.message-txt').text('Are you sure to delete row??');
-        $('#myModal3').modal('show');
-        $('#confirm').click(function() {
-            $.ajax({
-            url : 'php/supprimer.php',
-            method: 'POST',
-            data : { delete: id , nomtable: 'expert'},
-            success: function(response){
-                        $('#myModal3').modal('hide');
-                        console.log("delete success");                          
-                    }
+        <script>
+            $(document).on('click', 'a[data-role="supprimerExpert"]', function() {
+                var id= $(this).data('id');
+                $('.message-txt').text('Are you sure to delete row??');
+                $('#myModal3').modal('show');
+                $('#confirm').click(function() {
+                    $.ajax({
+                    url : 'php/supprimer.php',
+                    method: 'POST',
+                    data : { delete: id , nomtable: 'expert'},
+                    success: function(response){
+                                $('#myModal3').modal('hide');
+                                console.log("delete success");                          
+                            }
+                    });
+                });
             });
-        });
-    });
-</script>
+        </script>
 
 
         <!-- success message -->
         <div id="snackbar"></div>
         <!-- fin success message -->
+
 
         <footer>
             <p>Copyright&copy; 2023</p>

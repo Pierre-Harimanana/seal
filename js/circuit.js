@@ -1,6 +1,5 @@
 let boutonAdd= document.querySelector('#ajouterCircuit');
-let form= document.querySelector('.bodyModal form');
-let erreurText= document.querySelector('.error-txt');
+let form= document.querySelector('.modal-content form');
 
 form.onsubmit=function(e){
     e.preventDefault();
@@ -14,13 +13,12 @@ boutonAdd.onclick=function() {
             if (xhr.status==200) {
                 let data = xhr.responseText;
                 if(data !== 'succes'){
-                    $('.error-txt').slideDown(300);
+                    $('.messageBox').slideDown(200);
                     $('.error-txt').text(data);
                 }else{
-                    $('#snackbar').text('ajout nouvel expert réussi');
+                    $('#snackbar').text('ajout nouvel circuit réussi');
                     showMessage();
-
-                    $('.modal').hide();
+                    $('.modal').modal('hide');
                 }
             }
         }

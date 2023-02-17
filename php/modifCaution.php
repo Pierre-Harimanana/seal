@@ -6,7 +6,7 @@
     $msc= htmlspecialchars($_POST['msc']);
     $cmacgm= htmlspecialchars($_POST['cmacgm']);
 
-    $id= htmlspecialchars($_POST['id']);
+    $id= htmlspecialchars($_POST['id']);    
 
     if(!empty($customer)){
         if(!empty($maersk)){

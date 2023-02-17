@@ -1,32 +1,27 @@
-<div class="modalLogout">
-    <div class="modal-content">
-        <div class="header-modal">
-            <h3>Logout</h3>
-            <span class="closeLogin">&times;</span>
-        </div>
-        <p class="modal-text">
-            Do you want to quit the application?
-        </p>
-        <div class="modal-footer">
-            <button class="success" id="logout">Logout</button>
-            <button class="cancel">Cancel</button>
+<!-- Modal logout -->
+<div class="modal fade" id="modalLogout" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">logout</h4>
+            </div>
+            <div class="modal-body">
+                <p class="message-txt">Are you sure to quit application??</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="btnLogout">
+                    <span class="glyphicon glyphicon-ok-sign"></span>
+                    Yes
+                </button>
+
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <span class="glyphicon glyphicon-remove-circle"></span>
+                    No
+                </button>
+            </div>
         </div>
     </div>
 </div>
-
-
-<div class="modalConfirmation">
-    <div class="modal-content">
-        <div class="header-modal">
-            <h3>Confirmation</h3>
-            <span class="closeLogin">&times;</span>
-        </div>
-        <p class="modal-text">
-            Confirm delete?
-        </p>
-        <div class="modal-footer">
-            <button class="confirm" id="">Delete</button>
-            <button class="cancel">Cancel</button>
-        </div>
-    </div>
-</div>
+<!-- Fin Modal logout -->

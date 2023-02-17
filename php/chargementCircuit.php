@@ -13,11 +13,18 @@
                 <td data-target="circuit">'.$data['circuit'].'</td>
                 
                 <td> 
-                    <a href="#" data-role="update" data-id='.$data['id'].'>
-                        <button class="boutonModifier">modifier</button> 
-                    </a>
-                    <a href="php/supprimer.php?delete='.$data['id'].'&table=circuit">
-                        <button class="boutonSupprimer" id="supprimer">supprimer</button> 
+                    <a data-role="update" data-id='.$data['id'].'>
+                    <button class="btn btn-success btn-xs">
+                        <span class="glyphicon glyphicon-edit"></span>
+                        modifier
+                    </button> 
+                    </a> 
+                    
+                    <a data-role="supprimerCaution" data-id="'.$data['id'].'">
+                        <button class="btn btn-danger btn-xs">
+                            <span class="glyphicon glyphicon-trash"></span>
+                            supprimer
+                        </button>
                     </a> 
                 </td>
             </tr>
