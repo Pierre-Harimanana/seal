@@ -24,7 +24,10 @@
 
             <div class="right">
                 <input class="inputHeader" type="text" placeholder="you can search here">
-                <button data-toggle="tooltip" data-placement="bottom" title="set on <?=$_SESSION['admin']?>!" class="inputHeader" id="logout">Logout</button>
+                <button data-toggle="tooltip" data-placement="bottom" title="logout <?=$_SESSION['admin']?>!" class="inputHeader" id="logout">
+                    <span class="glyphicon glyphicon-log-out"></span>
+                    Logout
+                </button>
             </div>
         </div>
 
@@ -60,7 +63,7 @@
         </script>
 
         <footer>
-            <p>Copyright 2023</p>
+            <p>Copyright &copy; 2023</p>
         </footer>
 
         <script src="bootstrap/js/bootstrap.js"></script>
@@ -173,11 +176,11 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" id="confirm">
-                    <span class="glyphicon glyphicon-leaf"></span>
+                    <span class="glyphicon glyphicon-ok-sign"></span>
                     Yes
                 </button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">
-                    <span class="glyphicon glyphicon-eject"></span>
+                    <span class="glyphicon glyphicon-remove-circle"></span>
                     No
                 </button>
             </div>

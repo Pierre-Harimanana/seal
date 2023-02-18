@@ -6,6 +6,9 @@
 <html>
     <head>
         <link rel="stylesheet" href="css/apps.style.css">
+
+        <link rel="shortcut icon" href="images/Contact-icon.png" type="image/x-icon">
+        <!-- bootstrap -->
         <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <meta charset="utf-8">
@@ -16,13 +19,17 @@
         <div class="header">
             <h1>
                 <a href="index.php">
-                    La Ligne Scandinave
+                <span class="glyphicon glyphicon-export"></span>
+                La Ligne Scandinave
                 </a> 
             </h1>
 
             <div class="right">
                 <input class="inputHeader" type="text" placeholder="you can search here">
-                <button class="inputHeader" id="logoutModal">Logout</button>
+                <button class="inputHeader" id="logoutModal">
+                    <span class="glyphicon glyphicon-log-out"></span>
+                    Logout
+                </button>
             </div>
         </div>
 
@@ -39,7 +46,12 @@
                 </div>
                 
                 <div class="footerBoite">
-                    <a href="expert.php"><button class="toExpert">Expert</button></a>
+                    <a href="expert.php">
+                        <button class="toExpert">
+                        <span class="glyphicon glyphicon-user"></span>
+                        Expert
+                        </button>
+                </a>
                 </div>
             </div>
            
@@ -52,7 +64,12 @@
                 </div>
 
                 <div class="footerBoite">
-                    <a href="caution.php"><button>Caution</button></a>
+                    <a href="caution.php">
+                        <button>
+                            <span class="glyphicon glyphicon-stats"></span>
+                            Caution
+                        </button>
+                    </a>
                 </div>
             </div>
 
@@ -66,13 +83,18 @@
                 </div>
 
                 <div class="footerBoite">
-                    <a href="circuit.php"><button>Circuit</button></a>
+                    <a href="circuit.php">
+                        <button>
+                        <span class="glyphicon glyphicon-road"></span>
+                        Circuit
+                        </button>
+                    </a>
                 </div>
             </div>            
         </div>
 
         <footer>
-            <p>Copyright 2023</p>
+            <p>Copyright&copy; 2023</p>
         </footer>
 
         <?php

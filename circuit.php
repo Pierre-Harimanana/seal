@@ -22,7 +22,9 @@
 
             <div class="right">
                 <input id="search" class="inputHeader" type="text" placeholder="you can search here">
-                <button class="inputHeader"  id="logoutModal">Logout</button>
+                <button class="inputHeader"  id="logoutModal">
+                    <span class="glyphicon glyphicon-log-out"></span>
+                    Logout</button>
             </div>
         </div>
 
@@ -44,7 +46,7 @@
         </div>
 
     
-        <div class="ajouterCircuit">
+        <div class="ajouterExpert">
             <button data-toggle="modal" data-target="#myModal" class="btn btn-success btn-lg" >
                 <span class="glyphicon glyphicon-plus"></span>
                 Ajouter
@@ -74,12 +76,15 @@
                                 </div>  
                                 <div class="form-group">
                                     <label for="txt2">Circuit:</label>
-                                    <input type="text" name="circuit" class="form-control" placeholder="enter maersk">
+                                    <input type="text" name="circuit" class="form-control" placeholder="enter circuit">
                                 </div>  
                         </div>
                             
                         <div class="modal-footer">
-                                <button type="submit" class="btn btn-success" id="ajouterCircuit">Add expert</button>
+                                <button type="submit" class="btn btn-success" id="ajouterCircuit">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                    ajouter
+                                </button>
                         </div>
                     </form>
 
@@ -92,33 +97,34 @@
         <div id="myModal2" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header text-center">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Modal Header</h4>
                     </div>
                     
-                        <div class="modal-body">
-                            <div class="alert alert-danger messageBox">
-                                <strong>Danger!</strong> 
-                                <span class="error-txt">
-                                    Indicates a dangerous or potentially negative action.
-                                </span>
-                            </div>
-                                <div class="form-group">
-                                    <label for="pwd">Client :</label>
-                                    <input type="text" id="clientModif" class="form-control">
-                                </div>  
-                                <div class="form-group">
-                                    <label for="pwd">Maersk :</label>
-                                    <input type="text" id="circuitModif" class="form-control">
-                                </div>  
+                    <div class="modal-body">
+                        <div class="alert alert-danger messageBox">
+                            <strong>Danger!</strong> 
+                            <span class="error-txt">
+                                Indicates a dangerous or potentially negative action.
+                            </span>
                         </div>
-                            
-                        <div class="modal-footer">
-                            <!-- <button type="submit" class="btn btn-success" id="saveCaution">Save</button> -->
-                            <button type="submit" class="btn btn-default" id="saveCircuit">test</button>
-                        </div>
-
+                            <div class="form-group">
+                                <label for="pwd">Client :</label>
+                                <input type="text" id="clientModif" class="form-control">
+                            </div>  
+                            <div class="form-group">
+                                <label for="pwd">Maersk :</label>
+                                <input type="text" id="circuitModif" class="form-control">
+                            </div>  
+                    </div>
+                        
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success" id="saveCircuit">
+                            <span class="glyphicon glyphicon-save"></span>
+                            Save
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

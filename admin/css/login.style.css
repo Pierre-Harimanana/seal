@@ -18,9 +18,16 @@ footer {
 }
 
 .background-red{
-  background: #8b8b96;
+  background: #dbdbe2;
   color: #3d3636;
+  border-radius: 10px;
 }
+
+.bg-2{
+  background-color:#f38370;
+  color: #f1f1f1;
+}
+
 
 .btn {
   padding: 10px 20px;

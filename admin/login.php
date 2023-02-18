@@ -14,7 +14,7 @@
             
         <div class="jumbotron text-center bg-2">
             <h1>La ligne Scandinave</h1>
-            <p>This page is reserved for administrator only, there you can manage the list of user, and set on and set off some account.</p>
+            <p>This page is reserved for administrator only, there you can manage the list of user, and set up some user account.</p>
         </div>
 
     <div class="container background-red">
@@ -31,16 +31,16 @@
             </div>
             
             <div class="form-group">
-                <label class="control-label col-sm-2" for="email">Username *</label>
+                <label class="control-label col-sm-2" for="input1">Username *</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="username" placeholder="Enter email">
+                    <input type="text" id="input1" class="form-control" name="username" placeholder="Enter email">
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-2" for="pwd">Password *</label>
             <div class="col-sm-10">          
-                <input type="password" class="form-control" name="motdepass" placeholder="Enter password">
+                <input type="password" id="pwd" class="form-control" name="motdepass" placeholder="Enter password">
             </div>
         </div>
         

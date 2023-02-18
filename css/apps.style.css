@@ -69,6 +69,10 @@ footer p{
   bottom: 100px;
   right: 30px;
 }
+
+.ajouterExpert button{
+  border-radius: 30px;
+}
 /* end bouton ajout */
 
 /*message*/
@@ -123,7 +127,7 @@ footer p{
 
 .conteneur .boite{
   width: 300px;
-  margin-right: 20px;
+  margin-right: 22px;
   text-align: center;
   opacity: 0.5;
   transition: 0.3s;
@@ -140,6 +144,7 @@ footer p{
 }
 .boite .headerBoite{
   background-color: #111;
+  background-color: #963c3c;
   color: #fff;
   font-size: 1.8em;
   padding: 50px 0;
@@ -213,4 +218,8 @@ footer p{
   footer p{
     padding: 30px;
   }
+}
+
+.modal-content{
+    padding: 0px 20px;
 }

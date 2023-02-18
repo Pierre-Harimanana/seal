@@ -22,7 +22,10 @@
 
             <div class="right">
                 <input id="search" class="inputHeader" type="text" placeholder="you can search here">
-                <button class="inputHeader"  id="logoutModal">Logout</button>
+                <button class="inputHeader"  id="logoutModal">
+                    <span class="glyphicon glyphicon-log-out"></span>
+                    Logout
+                </button>
             </div>
         </div>
 
@@ -88,7 +91,10 @@
                         </div>
                             
                         <div class="modal-footer">
-                                <button type="submit" class="btn btn-success" id="ajouterCaution">Add expert</button>
+                                <button type="submit" class="btn btn-success" id="ajouterCaution">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                    ajouter
+                                </button>
                         </div>
                     </form>
 
@@ -104,7 +110,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Modal Header</h4>
+                        <h4 class="text-center">modification</h4>
                     </div>
                     
                         <div class="modal-body">
@@ -135,7 +141,10 @@
                             
                         <div class="modal-footer">
                             <!-- <button type="submit" class="btn btn-success" id="saveCaution">Save</button> -->
-                            <button type="submit" class="btn btn-default" id="saveCaution">test</button>
+                            <button type="submit" class="btn btn-success" id="saveCaution">
+                                <span class="glyphicon glyphicon-save"></span>
+                                save
+                            </button>
                         </div>
 
                 </div>

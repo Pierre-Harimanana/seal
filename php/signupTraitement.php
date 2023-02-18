@@ -18,8 +18,10 @@ if(!empty($username)){
 
                 if (!$user) {
                     
+                    $hashedPass= sha1($password);
+
                     $insert= $bdd->prepare('insert into utilisateur (username,passwordUser,validate,date_inscription) values (?,?,?,?)');
-                    $insert->execute(array($username, $password,$validation,$date));
+                    $insert->execute(array($username, $hashedPass,$validation,$date));
                     echo "succes";
 
                 }else {
