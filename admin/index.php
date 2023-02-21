@@ -20,10 +20,13 @@
     <body>
 
         <div class="header">
-            <h1>Controller</h1>
+            <h1>
+                <span class="glyphicon glyphicon-check"></span>
+                Controller
+            </h1>
 
             <div class="right">
-                <input class="inputHeader" type="text" placeholder="you can search here">
+                <input class="inputHeader" id="search" type="text" placeholder="you can search here">
                 <button data-toggle="tooltip" data-placement="bottom" title="logout <?=$_SESSION['admin']?>!" class="inputHeader" id="logout">
                     <span class="glyphicon glyphicon-log-out"></span>
                     Logout
@@ -188,3 +191,32 @@
     </div>
 </div>
 <!-- Fin Modal -->
+
+
+<script>
+    const table= document.querySelector('.tableau');
+    searchBar= document.querySelector('#search');
+
+    searchBar.onkeyup=function() {
+        let search= searchBar.value;
+
+        if (search!=="") {
+            searchBar.classList.add('active');
+        }else{
+            searchBar.classList.remove('active');
+        }
+
+        var xhr= new XMLHttpRequest();
+        xhr.open('POST', 'php/searchExpert.php', true);
+        xhr.onload=function() {
+            if (xhr.readyState==XMLHttpRequest.DONE) {
+                if (xhr.status==200) {
+                    let data = xhr.response;
+                    table.innerHTML=data;
+                }   
+            }
+        }
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.send("searchTerm=" + search);
+    }
+</script>

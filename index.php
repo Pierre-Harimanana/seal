@@ -19,7 +19,7 @@
         <div class="header">
             <h1>
                 <a href="index.php">
-                <span class="glyphicon glyphicon-export"></span>
+                    <span class="glyphicon glyphicon-export"></span>
                 La Ligne Scandinave
                 </a> 
             </h1>

@@ -16,6 +16,7 @@
         <div class="header">
                 <h1>
                     <a href="index.php">
+                        <span class="glyphicon glyphicon-export"></span>
                         La Ligne Scandinave > Circuit
                     </a> 
                 </h1>

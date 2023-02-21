@@ -69,7 +69,7 @@
     </body>
 </html>
 
-    <script>
+<script>
 let boutonLogin= document.querySelector('.btnlogin');
 let form= document.querySelector('form');
 
