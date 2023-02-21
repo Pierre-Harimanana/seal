@@ -40,9 +40,9 @@
                 </div>
                 
                 <div class="contentBoite">
-                    <p>Count <span>20</span> </p>
-                    <p>Count <span>20</span> </p>
-                    <p>Count <span>20</span> </p>
+                    <p>CEHR</p>
+                    <p>CEMM</p>
+                    <p>SEMAD</p>
                 </div>
                 
                 <div class="footerBoite">
@@ -58,9 +58,9 @@
             <div class="boite marg">
                 <div class="headerBoite">Caution</div>
                 <div class="contentBoite ">
-                    <p>Count <span>20</span> </p>
-                    <p>Count <span>20</span> </p>
-                    <p>Count <span>20</span> </p>
+                    <p>SEAL</p>
+                    <p>CLIENT</p>
+                    <p>PERMANENT</p>
                 </div>
 
                 <div class="footerBoite">
@@ -77,9 +77,9 @@
                 <div class="headerBoite">Circuit</div>
                 
                 <div class="contentBoite">
-                    <p>Count <span>20</span> </p>
-                    <p>Count <span>20</span> </p>
-                    <p>Count <span>20</span> </p>
+                    <p>VERT</p>
+                    <p>ROUGE</p>
+                    <p>JAUNE</p>
                 </div>
 
                 <div class="footerBoite">
