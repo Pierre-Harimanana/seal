@@ -9,19 +9,19 @@
 
     if ($x > 0) {
         while ($data= $res->fetch()) {
-                $retour.=' 
-                <tr id="'.$data['id'].'">
+            $retour.=' 
+            <tr id="'.$data['id'].'">
                 <td data-target="nom_client">'.$data['nom_client'].'</td>
                 <td data-target="expert">'.$data['expert'].'</td>
                 <td>    
-                    <a href="#" data-role="update" data-id='.$data['id'].'>
+                    <a data-role="update" data-id='.$data['id'].'>
                         <button class="btn btn-success btn-xs">
                             <span class="glyphicon glyphicon-edit"></span>
                             modifier
                         </button> 
                     </a> 
             
-                    <a href="php/supprimer.php?delete='.$data['id'].'&table=expert">
+                    <a data-role="supprimerExpert" data-id="'.$data['id'].'">
                         <button class="btn btn-danger btn-xs">
                             <span class="glyphicon glyphicon-trash"></span>
                             supprimer

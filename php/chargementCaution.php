@@ -3,7 +3,6 @@
     include_once "connection.php";
 
     $res= $bdd->query('select * from caution order by id');
-
     $output='';
 
     while ($data= $res->fetch()) {

@@ -31,6 +31,9 @@ $(document).ready(function() {
                         $('#myModal2').modal('hide'); 
                         showMessage();
                         $('#snackbar').text('Modification réussie!');
+
+                        console.log('etoooooooooooo');
+                        mitady();
                     }
                 }
             });

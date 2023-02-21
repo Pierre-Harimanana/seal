@@ -1,5 +1,6 @@
+setInterval(charge, 600);
 
-setInterval(() => {
+function charge() {
     const tableau= document.querySelector('.contentTable');
     var xhr= new XMLHttpRequest();
     xhr.open('GET', 'php/chargementCaution.php', true);
@@ -15,4 +16,4 @@ setInterval(() => {
         }
     }
     xhr.send();    
-}, 300);
+}

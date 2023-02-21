@@ -74,19 +74,19 @@
                                 </span>
                             </div>
                                 <div class="form-group">
-                                    <label for="client">Customer:</label>
+                                    <label for="client">Customer :</label>
                                     <input type="text" name="client" class="form-control" placeholder="enter customer name">
                                 </div>  
                                 <div class="form-group">
-                                    <label for="txt2">Expert:</label>
+                                    <label for="txt2">Maersk :</label>
                                     <input type="text" name="maersk" class="form-control" placeholder="enter maersk">
                                 </div>  
                                 <div class="form-group">
-                                    <label for="txt2">Expert:</label>
+                                    <label for="txt2">Msc :</label>
                                     <input type="text" name="msc" class="form-control" placeholder="enter msc">
                                 </div>
                                 <div class="form-group">
-                                    <label for="txt2">Expert:</label>
+                                    <label for="txt2">Cmacgm :</label>
                                     <input type="text" name="cmacgm" class="form-control" placeholder="enter cmacgm">
                                 </div>
                         </div>
@@ -184,24 +184,6 @@
             include 'include/modal.php';
         ?>
         
-        <script>
-            $(document).on('click', 'a[data-role="supprimerCaution"]', function() {
-                var id= $(this).data('id');
-                $('.message-txt').text('Are you sure to delete row??');
-                $('#myModal3').modal('show');
-                $('#confirm').click(function() {
-                    $.ajax({
-                    url : 'php/supprimer.php',
-                    method: 'POST',
-                    data : { delete: id , nomtable: 'caution'},
-                    success: function(response){
-                                $('#myModal3').modal('hide');
-                                console.log("delete success");                          
-                            }
-                    });
-                });
-            });
-        </script>
 
         <!-- success message -->
         <div id="snackbar"></div>
@@ -221,10 +203,36 @@
 <script src="js/modifCaution.js"></script>
 
 <script>
+    $(document).on('click', 'a[data-role="supprimerCaution"]', function() {
+        var id= $(this).data('id');
+        $('.message-txt').text('Are you sure to delete row??');
+        $('#myModal3').modal('show');
+        $('#confirm').click(function() {
+            $.ajax({
+            url : 'php/supprimer.php',
+            method: 'POST',
+            data : { delete: id , nomtable: 'caution'},
+            success: function(response){
+                        $('#myModal3').modal('hide');
+                        console.log("delete success");
+
+                        charge();
+                    }
+            });
+        });
+    });
+</script>
+
+
+<script>
     const table= document.querySelector('.contentTable');
     searchBar= document.querySelector('#search');
 
     searchBar.onkeyup=function() {
+        mitady();
+    }
+
+    function mitady() {
         let search= searchBar.value;
 
         if (search!=="") {

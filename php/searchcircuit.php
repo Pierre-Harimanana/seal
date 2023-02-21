@@ -9,10 +9,11 @@
 
     if ($x > 0) {
         while ($data= $res->fetch()) {
-                $retour.=' 
-                <tr id="'.$data['id'].'">
+            $retour.=' 
+                <tr id='.$data["id"].'>
                     <td data-target="nom_client">'.$data['nom_client'].'</td>
                     <td data-target="circuit">'.$data['circuit'].'</td>
+                    
                     <td> 
                         <a data-role="update" data-id='.$data['id'].'>
                         <button class="btn btn-success btn-xs">

@@ -3,7 +3,6 @@
     include_once "connection.php";
 
     $res= $bdd->query('select * from circuit order by id');
-
     $output='';
 
     while ($data= $res->fetch()) {

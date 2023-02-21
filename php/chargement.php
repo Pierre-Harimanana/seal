@@ -3,10 +3,10 @@
     include_once "connection.php";
 
     $res= $bdd->query('select * from expert order by id');
-
     $output='';
 
     while ($data= $res->fetch()) {
+            
             $output.=' 
             <tr id="'.$data['id'].'">
                 <td data-target="nom_client">'.$data['nom_client'].'</td>

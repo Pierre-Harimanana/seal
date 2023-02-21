@@ -165,26 +165,6 @@
             include 'include/modal.php';
         ?>
 
-        <script>
-            $(document).on('click', 'a[data-role="supprimerExpert"]', function() {
-                var id= $(this).data('id');
-                $('.message-txt').text('Are you sure to delete row??');
-                $('#myModal3').modal('show');
-                $('#confirm').click(function() {
-                    $.ajax({
-                    url : 'php/supprimer.php',
-                    method: 'POST',
-                    data : { delete: id , nomtable: 'expert'},
-                    success: function(response){
-                                $('#myModal3').modal('hide');
-                                console.log("delete success");                          
-                            }
-                    });
-                });
-            });
-        </script>
-
-
         <!-- success message -->
         <div id="snackbar"></div>
         <!-- fin success message -->
@@ -202,11 +182,38 @@
 <script src="js/chargement.js"></script>
 <script src="js/modification.js"></script>  
 <script src="js/apps.js"></script>
+
+<script>
+    $(document).on('click', 'a[data-role="supprimerExpert"]', function() {
+        var id= $(this).data('id');
+        $('.message-txt').text('Are you sure to delete row??');
+        $('#myModal3').modal('show');
+        $('#confirm').click(function() {
+            $.ajax({
+            url : 'php/supprimer.php',
+            method: 'POST',
+            data : { delete: id , nomtable: 'expert'},
+            success: function(response){
+                        $('#myModal3').modal('hide');
+                        console.log("delete success");
+                        
+                        charge();                                
+                    }
+            });
+        });
+    });
+</script>
+
+
 <script>
     const table= document.querySelector('.tableau');
     searchBar= document.querySelector('#search');
 
     searchBar.onkeyup=function() {
+        mitady();
+    }
+
+    function mitady() {
         let search= searchBar.value;
 
         if (search!=="") {
@@ -228,4 +235,5 @@
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhr.send("searchTerm=" + search);
     }
+
 </script>

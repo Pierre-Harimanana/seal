@@ -162,24 +162,6 @@
             include 'include/modal.php';
         ?>
 
-        <script>
-            $(document).on('click', 'a[data-role="supprimerCaution"]', function() {
-                var id= $(this).data('id');
-                $('.message-txt').text('Are you sure to delete row??');
-                $('#myModal3').modal('show');
-                $('#confirm').click(function() {
-                    $.ajax({
-                    url : 'php/supprimer.php',
-                    method: 'POST',
-                    data : { delete: id , nomtable: 'circuit'},
-                    success: function(response){
-                                $('#myModal3').modal('hide');
-                                console.log("delete success");                          
-                            }
-                    });
-                });
-            });
-        </script>
 
         <!-- success message -->
         <div id="snackbar"></div>
@@ -199,10 +181,35 @@
 <script src="js/modifCircuit.js"></script>
 
 <script>
+    $(document).on('click', 'a[data-role="supprimerCaution"]', function() {
+        var id= $(this).data('id');
+        $('.message-txt').text('Are you sure to delete row??');
+        $('#myModal3').modal('show');
+        $('#confirm').click(function() {
+            $.ajax({
+            url : 'php/supprimer.php',
+            method: 'POST',
+            data : { delete: id , nomtable: 'circuit'},
+            success: function(response){
+                        $('#myModal3').modal('hide');
+                        console.log("delete success");
+
+                        charge();
+                    }
+            });
+        });
+    });
+</script>
+
+<script>
     const table= document.querySelector('.contentTable');
     searchBar= document.querySelector('#search');
 
     searchBar.onkeyup=function() {
+        mitady();
+    }
+
+    function mitady() {
         let search= searchBar.value;
 
         if (search!=="") {
