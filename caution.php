@@ -214,9 +214,12 @@
             data : { delete: id , nomtable: 'caution'},
             success: function(response){
                         $('#myModal3').modal('hide');
-                        console.log("delete success");
 
-                        charge();
+                        showMessage();
+                        $('#snackbar').text('suppression réussie!');
+                        setTimeout(() => {
+                            location.reload();
+                        }, 600);
                     }
             });
         });
